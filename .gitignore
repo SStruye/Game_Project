@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+#extra
+
+*.json
+v17/
+debug/

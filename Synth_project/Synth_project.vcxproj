@@ -148,6 +148,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ADSR.h" />
+    <ClInclude Include="KeyMap.h" />
+    <ClInclude Include="WaveForms.h" />
     <ClInclude Include="olcNoiseMaker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

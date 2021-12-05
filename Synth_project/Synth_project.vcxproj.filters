@@ -26,5 +26,11 @@
     <ClInclude Include="ADSR.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="WaveForms.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

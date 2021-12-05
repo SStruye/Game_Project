@@ -6,13 +6,10 @@ public:
     double AttackT = 0.05;
     double DecayT = 0.02;
     double ReleaseT = 0.2;
-
     double SustainA = 0.8;
     double StartA = 0.8;
-
     double TriggerOn = 0.0;
     double TriggerOff = 0.0;
-
     bool KeyState = false;
 
     double GetAmpl(double dTime) {

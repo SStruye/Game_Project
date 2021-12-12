@@ -5,14 +5,14 @@
 class WaveForms {
 public:
     atomic<double> frequency = 0.0;
-    double BasicWave(double frequency) { return frequency * 2 * PI; }
+    double BasicWave(double frequency) { return frequency * 2 * PI; } //freq to angular velocityq
     int transpose = 15;
 
 
     double Osc(double frequency, double dTime, int OscType, double LfoFreq, double LfoAmpl) {
 
         double freq = BasicWave(frequency) * dTime + LfoAmpl * frequency * sin(BasicWave(LfoFreq * dTime));
-
+  
         switch (OscType) {
         case 0: return sin(freq); //sine wave      
         case 1: return sin(freq) > 0.0 ? 1 : -1; //square wave       

@@ -5,9 +5,8 @@
 class WaveForms {
 public:
     atomic<double> frequency = 0.0;
-    double BasicWave(double frequency) { return frequency * 2 * PI; } //freq to angular velocityq
+    double BasicWave(double frequency) { return frequency * 2 * PI; } //freq to angular velocity
     int transpose = 15;
-
 
     double Osc(double frequency, double dTime, int OscType, double LfoFreq, double LfoAmpl) {
 

@@ -6,7 +6,6 @@ using namespace std;
 #include "ADSR.h"
 #include "WaveForms.h"
 #include "KeyMap.h"
-#include "Note.h"
 
 ADSR ADSRobj;
 WaveForms WaveFormsobj;

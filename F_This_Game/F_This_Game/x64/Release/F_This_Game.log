@@ -1,0 +1,16 @@
+﻿  level.cpp
+C:\Projects 2021-2022\OOP_VST_Plugin\Synth_project\F_This_Game\F_This_Game\recourses.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  main.cpp
+C:\Projects 2021-2022\OOP_VST_Plugin\Synth_project\F_This_Game\F_This_Game\recourses.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  background.cpp
+C:\Projects 2021-2022\OOP_VST_Plugin\Synth_project\F_This_Game\F_This_Game\recourses.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  obstacle.cpp
+C:\Projects 2021-2022\OOP_VST_Plugin\Synth_project\F_This_Game\F_This_Game\recourses.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  floor.cpp
+C:\Projects 2021-2022\OOP_VST_Plugin\Synth_project\F_This_Game\F_This_Game\recourses.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  player.cpp
+C:\Projects 2021-2022\OOP_VST_Plugin\Synth_project\F_This_Game\F_This_Game\recourses.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  setup.cpp
+C:\Projects 2021-2022\OOP_VST_Plugin\Synth_project\F_This_Game\F_This_Game\recourses.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  textures.cpp
+C:\Projects 2021-2022\OOP_VST_Plugin\Synth_project\F_This_Game\F_This_Game\recourses.h(4,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory

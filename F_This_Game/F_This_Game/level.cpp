@@ -10,6 +10,32 @@ using namespace std;
 
 level::level() {
 	fillVector(Obstacles, lvl[0]);
+
+	zero = textures::LoadTexture("assets/numbers/number_0.png");
+	one = textures::LoadTexture("assets/numbers/number_1.png");
+	two = textures::LoadTexture("assets/numbers/number_2.png");
+	three = textures::LoadTexture("assets/numbers/number_3.png");
+	four = textures::LoadTexture("assets/numbers/number_4.png");
+	five = textures::LoadTexture("assets/numbers/number_5.png");
+	six = textures::LoadTexture("assets/numbers/number_6.png");
+	seven = textures::LoadTexture("assets/numbers/number_7.png");
+	eight = textures::LoadTexture("assets/numbers/number_8.png");
+	nine = textures::LoadTexture("assets/numbers/number_9.png");
+
+	singlesrcR.x = singlesrcR.y = decsrcR.x = decsrcR.y = 0;
+	singlesrcR.w = 32;
+	singledestR.w = 64;
+	singlesrcR.h = 32;
+	singledestR.h = 64;
+	singledestR.x = 928;
+	singledestR.y = 50;
+
+	decsrcR.w = 32;
+	decdestR.w = 64;
+	decsrcR.h = 32;
+	decdestR.h = 64;
+	decdestR.x = 864;
+	decdestR.y = 50;
 };
 
 void level::fillVector(vector<obstacle>&newAdd, int type) {
@@ -41,15 +67,17 @@ void level::update() {
 	}
 	cnt++;
 	if (cnt == 16) {
-		fillVector(Obstacles, lvl[iterator]);
-		Collision.push_back(lvl[iterator]);
+		if (iterator < 64) {
+			fillVector(Obstacles, lvl[iterator]);
+			Collision.push_back(lvl[iterator]);
+		}	
 		iterator++;
 		cnt = 0;
 	}
-	if (iterator == 74) {
+	if (iterator == lvlSize+9) {
 		finished = true;
 	}
-	cout << "score: " << iterator << endl;
+	//cout << "score: " << iterator << endl;
 }
 
 bool level::reset() {
@@ -60,6 +88,57 @@ void level::render() {
 	unsigned int size = Obstacles.size();
 	for (unsigned int i = 0; i < size; i++) {
 		Obstacles[i].render();
+	}
+
+	int singleN = iterator % 10;
+	int decN = (iterator - iterator % 10) / 10;
+	switch (singleN) {
+	case 0: SDL_RenderCopy(setup::renderer, zero, &singlesrcR, &singledestR);
+		break;
+	case 1: SDL_RenderCopy(setup::renderer, one, &singlesrcR, &singledestR);
+		break;
+	case 2: SDL_RenderCopy(setup::renderer, two, &singlesrcR, &singledestR);
+		break;
+	case 3: SDL_RenderCopy(setup::renderer, three, &singlesrcR, &singledestR);
+		break;
+	case 4: SDL_RenderCopy(setup::renderer, four, &singlesrcR, &singledestR);
+		break;
+	case 5: SDL_RenderCopy(setup::renderer, five, &singlesrcR, &singledestR);
+		break;
+	case 6: SDL_RenderCopy(setup::renderer, six, &singlesrcR, &singledestR);
+		break;
+	case 7: SDL_RenderCopy(setup::renderer, seven, &singlesrcR, &singledestR);
+		break;
+	case 8: SDL_RenderCopy(setup::renderer, eight, &singlesrcR, &singledestR);
+		break;
+	case 9: SDL_RenderCopy(setup::renderer, nine, &singlesrcR, &singledestR);
+		break;
+	default:
+		break;
+	}
+	switch (decN) {
+	case 0: SDL_RenderCopy(setup::renderer, zero, &decsrcR, &decdestR);
+		break;
+	case 1: SDL_RenderCopy(setup::renderer, one, &decsrcR, &decdestR);
+		break;
+	case 2: SDL_RenderCopy(setup::renderer, two, &decsrcR, &decdestR);
+		break;
+	case 3: SDL_RenderCopy(setup::renderer, three, &decsrcR, &decdestR);
+		break;
+	case 4: SDL_RenderCopy(setup::renderer, four, &decsrcR, &decdestR);
+		break;
+	case 5: SDL_RenderCopy(setup::renderer, five, &decsrcR, &decdestR);
+		break;
+	case 6: SDL_RenderCopy(setup::renderer, six, &decsrcR, &decdestR);
+		break;
+	case 7: SDL_RenderCopy(setup::renderer, seven, &decsrcR, &decdestR);
+		break;
+	case 8: SDL_RenderCopy(setup::renderer, eight, &decsrcR, &decdestR);
+		break;
+	case 9: SDL_RenderCopy(setup::renderer, nine, &decsrcR, &decdestR);
+		break;
+	default:
+		break;
 	}
 }
 
@@ -87,4 +166,5 @@ int level::isCollided() {
 	}
 	return gndLvl;
 }
+
 

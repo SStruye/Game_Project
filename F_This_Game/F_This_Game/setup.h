@@ -20,5 +20,6 @@ private:
 	SDL_Texture* startScreen;
 	bool start = false;
 	bool isRunning = false;
+	bool playing = false;
 	SDL_Window* window;
 };

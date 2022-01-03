@@ -46,15 +46,14 @@ void player::collision(int gnd) {
 	switch (gnd) {
 	case 0:	if (y_Pos >= 448) { ground = 512; }
 		  break;
-	case 1: if (isFalling == true && y_Pos <= 448) ground = 448;
-			else if (y_Pos > 448){ 
+	case 1: if (isFalling == true && y_Pos == 448) ground = 448;
+			else if (y_Pos > 448){  
 				std::cout << "dead by block" << std::endl;
 				dead = true;
 			}
 		break;
-	case 2: if (isFalling == true && y_Pos < 448) ground = 448;
-			else if (y_Pos >= 448) ground = 512;
-			if (y_Pos > 448) {
+	case 2: if (isFalling == true && y_Pos >= 448) ground = 512;
+			if (y_Pos > 470) {
 				std::cout << "dead by spike" << std::endl;
 				dead = true;
 			}

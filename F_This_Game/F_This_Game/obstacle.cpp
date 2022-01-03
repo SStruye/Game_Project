@@ -14,6 +14,9 @@ obstacle::obstacle(int typ, int x, int y) {
 	if (typ == 3) {
 		objTexture = textures::LoadTexture("assets/floor.png");
 	}
+	if (typ == 4) {
+		objTexture = textures::LoadTexture("assets/finish.png");
+	}
 	type = typ;
 	x_Pos = x;
 	y_Pos = y;

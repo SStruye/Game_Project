@@ -12,7 +12,6 @@ background::background() {
 	dest.y = 0;
 }
 
-
 void background::drawBackground() {
 	int type = 0;
 	textures::Draw(Background, src, dest);

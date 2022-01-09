@@ -4,11 +4,10 @@ bottom::bottom() {
 	fillVector(Floor);
 }
 
-void bottom::fillVector(vector<obstacle>& newAdd) {
-		obstacle newObstacle(3, 1024, 576);
-		newAdd.push_back(newObstacle);
+void bottom::fillVector(vector<obstacle>&newAdd) {
+	obstacle newObstacle(3, 1024, 576);
+	newAdd.push_back(newObstacle);
 }
-
 void bottom::update() {
 	unsigned int size = Floor.size();
 	for (unsigned int i = 0; i < size; i++) {

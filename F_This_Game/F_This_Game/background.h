@@ -8,7 +8,5 @@ public:
 	void drawBackground();
 private:
 	SDL_Rect src, dest;
-
 	SDL_Texture* Background;
-
 };

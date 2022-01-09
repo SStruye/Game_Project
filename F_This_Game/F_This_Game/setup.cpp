@@ -1,6 +1,5 @@
 #include "setup.h"
 #include "textures.h"
-//#include "objects.h"
 #include "background.h"
 #include "player.h"
 #include "obstacle.h"
@@ -15,7 +14,6 @@ SDL_Renderer* setup::renderer = nullptr;
 
 
 setup::setup() {}
-
 setup::~setup() {}
 
 void setup::init(const char* title, int w_window, int h_window) {
@@ -55,7 +53,7 @@ void setup::EventHandler() {
 		switch (event.key.keysym.sym)
 		{
 		case SDLK_SPACE:
-			Player->jump();
+			Player->jump();	
 			start = true;
 			break;
 		case SDLK_ESCAPE:
@@ -79,11 +77,12 @@ void setup::update(){
 }
 
 void setup::render(){
-	SDL_RenderClear(renderer);		
+	SDL_RenderClear(renderer);	
+	Background->drawBackground();
 	if (!start) {
 		textures::Draw(startScreen, src, dest);
 	}
-	Background->drawBackground();
+	
 	Bottom->render();
 	Level->render();
 	Player->render();
@@ -102,7 +101,7 @@ void setup::clean(){
 
 void setup::reset(bool isDead, bool isFinished){
 	if (isDead || isFinished){
-		SDL_Delay(1000);
+		SDL_Delay(200);
 		delete Level;
 		delete Bottom;
 		Level = new level;

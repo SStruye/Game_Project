@@ -16,6 +16,7 @@ SDL_Renderer* setup::renderer = nullptr;
 setup::setup() {}
 setup::~setup() {}
 
+//initate start of game
 void setup::init(const char* title, int w_window, int h_window) {
 	if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
 		window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, w_window, h_window, SDL_WINDOW_SHOWN);
@@ -40,7 +41,7 @@ void setup::init(const char* title, int w_window, int h_window) {
 	dest.x = 262;
 	dest.y = 300;
 }
-
+//handle events eg keypress, close window
 void setup::EventHandler() {
 	SDL_Event event;
 	SDL_PollEvent(&event);
@@ -65,9 +66,10 @@ void setup::EventHandler() {
 		break;
 	}
 }
-
+//update all active textures
 void setup::update(){
 	Player->update();
+	//if game is active
 	if (start) {
 		Bottom->update();
 		Level->update();
@@ -75,20 +77,20 @@ void setup::update(){
 		reset(Player->reset(),Level->reset());
 	}
 }
-
+//render all active textures
 void setup::render(){
 	SDL_RenderClear(renderer);	
 	Background->drawBackground();
+	//if game is not active
 	if (!start) {
 		textures::Draw(startScreen, src, dest);
-	}
-	
+	}	
 	Bottom->render();
 	Level->render();
 	Player->render();
 	SDL_RenderPresent(renderer);
 }
-
+//clean when closing
 void setup::clean(){
 	delete Player;
 	delete Level;
@@ -98,7 +100,7 @@ void setup::clean(){
 	SDL_DestroyRenderer(renderer);
 	SDL_Quit();
 }
-
+//reset game after finishing or dead
 void setup::reset(bool isDead, bool isFinished){
 	if (isDead || isFinished){
 		SDL_Delay(200);

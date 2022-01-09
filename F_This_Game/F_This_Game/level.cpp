@@ -38,6 +38,7 @@ level::level() {
 	decdestR.y = 50;
 };
 
+//add new obstacle to vector
 void level::fillVector(vector<obstacle>&newAdd, int type) {
 	switch (type) {
 	case 0: type = 0;
@@ -53,6 +54,7 @@ void level::fillVector(vector<obstacle>&newAdd, int type) {
 	newAdd.push_back(newObstacle);
 }
 
+//function to update the level every frame(same principal as floor::update)
 void level::update() {
 	unsigned int size = Obstacles.size();
 	for (unsigned int i = 0; i < size; i++) {
@@ -77,19 +79,21 @@ void level::update() {
 	if (iterator == lvlSize+9) {
 		finished = true;
 	}
-	//cout << "score: " << iterator << endl;
 }
 
+//reset game when lvl is finished
 bool level::reset() {
 	return finished;
 }
 
+//renders the obstacles and the scoreboard
 void level::render() {
 	unsigned int size = Obstacles.size();
 	for (unsigned int i = 0; i < size; i++) {
 		Obstacles[i].render();
 	}
 
+	//pixel art scoreboard generation
 	int singleN = iterator % 10;
 	int decN = (iterator - iterator % 10) / 10;
 	switch (singleN) {
@@ -141,7 +145,7 @@ void level::render() {
 		break;
 	}
 }
-
+//collision detection betweem obstacles and player
 int level::isCollided() {
 	gndLvl = 0;
 	unsigned int size = Collision.size();

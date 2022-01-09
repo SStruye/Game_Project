@@ -1,6 +1,6 @@
 #include "obstacle.h"
 #include "textures.h"
-
+//create obstacle with needed texture
 obstacle::obstacle(int typ, int x, int y) {
 	if (typ == 0) {
 		objTexture = textures::LoadTexture("assets/transparant.png");
@@ -21,7 +21,7 @@ obstacle::obstacle(int typ, int x, int y) {
 	x_Pos = x;
 	y_Pos = y;
 }
-
+//update obstacle position
 void obstacle::update() {
 	destR.x = x_Pos;
 	destR.y = y_Pos;
@@ -32,12 +32,12 @@ void obstacle::update() {
 	destR.w = srcR.w * 2;
 	destR.h = srcR.h * 2;
 }
-
+//move obstacle to left
 int obstacle::move() {
 	x_Pos -= 4;
 	return x_Pos;
 }
-
+//obstacle renderer
 void obstacle::render() {
 	SDL_RenderCopy(setup::renderer, objTexture, &srcR, &destR);
 }

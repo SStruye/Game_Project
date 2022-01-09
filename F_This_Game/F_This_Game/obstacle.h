@@ -11,8 +11,8 @@ public:
 	int x_Pos = 0;
 	int y_Pos = 0;
 	int type = 0;
-
 private:
+
 	SDL_Texture* objTexture;
 	SDL_Rect srcR, destR;
 };

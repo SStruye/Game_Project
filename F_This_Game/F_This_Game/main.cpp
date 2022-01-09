@@ -20,8 +20,9 @@ int main(int argc, char* args[]) {
 	const int frameDelay = 1000 / FPS;
 	Uint32 frameStart;
 	int frameTime;
-
+	
 	Setup = new setup();
+	//initiale game
 	Setup->init("F*ck This Game", 1024, 640);
 	
 	while (Setup->running()) {
